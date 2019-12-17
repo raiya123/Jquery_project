@@ -5,10 +5,47 @@ function getUrl() {
 $(document).ready(() =>{
     requestApi();
     $('#recipe').on('change',function(){
+        $('#hide').show();
+        $('#line').show();
         var recipes = $('#recipe').val();
         getRecipe(recipes);
+        ////// counter ////
+        $('#add').on('click',function(){
+            var sum = $('#member').val();
+            increse(sum);
+        })
+        $('#minus').on('click',function(){
+            var sum = $('#member').val();
+            dicrese(sum);
+        })
     });
-});
+    $('#hide').hide();
+    $('#line').hide();
+})
+////// Get counter ////
+var increse = (member) => {
+    var add = parseInt(member) + 1;
+   if(add <= 15){
+       $('#member').val(add);
+       compute(add);
+   }
+}
+var dicrese = (member) => {
+    var no = parseInt(member) - 1;
+    if(no >=0){
+       $('#member').val(no);
+       compute(no);
+    }
+}
+function compute(num){
+   var computes = num * 5;
+   if(number == 0){
+       progressBar(result);
+   }else{
+       progressBar(result + 25);
+   }
+   $('#result').html(computes);
+}
 
 ////// get Api ////
 function requestApi(){
@@ -71,7 +108,6 @@ function getIngredient(ingredient){
     })
     $('#ingredient').html(result);
 }
-
 ///// get Instruction ///
 function  getinstruction(instruction){
     $('#introduction').html('Instructions');
@@ -84,8 +120,10 @@ function  getinstruction(instruction){
         ${step[i]}
         `;
     }
-      $('#step').html(instruct);
+    $('#step').html(instruct);
 }
+///////// Get Guest //////////
 
-///// counter Number ///
+
+
 
