@@ -9,43 +9,22 @@ $(document).ready(() =>{
         $('#line').show();
         var recipes = $('#recipe').val();
         getRecipe(recipes);
-        ////// counter ////
-        $('#add').on('click',function(){
-            var sum = $('#member').val();
-            increse(sum);
-        })
-        $('#minus').on('click',function(){
-            var sum = $('#member').val();
-            dicrese(sum);
-        })
     });
     $('#hide').hide();
     $('#line').hide();
+
+    //////get increment and decrement
+    $('#add').on('click',function(){
+        var increment = $('#member').val();
+        getIncrement(increment);
+    }) 
+
+    $('#minus').on('click',function(){
+        var dicrement = $('#member').val();
+        getDicrement(dicrement);
+    }) 
+
 })
-////// Get counter ////
-var increse = (member) => {
-    var add = parseInt(member) + 1;
-   if(add <= 15){
-       $('#member').val(add);
-       compute(add);
-   }
-}
-var dicrese = (member) => {
-    var no = parseInt(member) - 1;
-    if(no >=0){
-       $('#member').val(no);
-       compute(no);
-    }
-}
-function compute(num){
-   var computes = num * 5;
-   if(number == 0){
-       progressBar(result);
-   }else{
-       progressBar(result + 25);
-   }
-   $('#result').html(computes);
-}
 
 ////// get Api ////
 function requestApi(){
@@ -66,6 +45,9 @@ function chhosenRechipe(rechipe){
     });
     $('#recipe').append(Option);
 }
+///// get quanlity //
+var quanlity = [];
+var oldGuest = 0;
 //// get recipe ////
 function getRecipe(rechipeId){
     $('#text-num').html('Number of persons');
@@ -74,8 +56,11 @@ function getRecipe(rechipeId){
            getEachRecipe(element.name,element.iconUrl);
            getIngredient(element.ingredients);
            getinstruction(element.instructions);
+           getNumberGest(element.nbGuests);
+           quanlity = element; 
+           oldGuest = element.nbGuests;
         }
-    });   
+    }); 
 }
 /// get Recipe ////
 var getEachRecipe = (name,img) =>{
@@ -90,7 +75,9 @@ var getEachRecipe = (name,img) =>{
     results +=`
     <img src="${img}" width="170" height="140"> 
     `;
+    
     $('#img').html(results);
+    //// get Guest ///
 }
  //// get Ingredient ///
 function getIngredient(ingredient){
@@ -123,7 +110,51 @@ function  getinstruction(instruction){
     $('#step').html(instruct);
 }
 ///////// Get Guest //////////
+function getNumberGest(guests){
+    var geusts = "";
+    geusts +=`
+        <input type="number" disabled class="text-center" id="member" value="${guests}">
+    `;
+    $('#guest').html(geusts);
+}
+
+///// get increment
+function getIncrement(increments){
+    var add = parseInt(increments) + 1;
+    if(add <= 15){
+        $('#member').val(add);
+        getValue($('#member').val());
+    }
 
 
+}
+///// get increment
+function getDicrement(dicrement){
+    var minus = parseInt(dicrement) - 1;
+    if(minus > 0){
+        $('#member').val(minus);
+        getValue( $('#member').val());
+    }
+}
 
+///// Get value of new member 
+function getValue(persons){
+    var quanlitys;
+    var newQuanlity;
+    var result = "";
+    quanlity.ingredients.forEach(item =>{
+        quanlitys = item.quantity/oldGuest;
+        newQuanlity = quanlitys*persons;
+        result +=`
+            <tr>
+            <td><img src="${item.iconUrl}" width="40" height="35"  /></td>
+            <td>${newQuanlity}</td>
+            <td>${item.unit[0].toLowerCase()}</td>
+            <td>${item.name}</td>
+          </tr>
+        `;
+    })
+    $('#ingredient').html(result);
+
+}
 
