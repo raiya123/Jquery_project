@@ -113,7 +113,7 @@ function  getinstruction(instruction){
 function getNumberGest(guests){
     var geusts = "";
     geusts +=`
-        <input type="number" disabled class="text-center" id="member" value="${guests}">
+        <input type="number" disabled class="text-center btn" id="member" value="${guests}">
     `;
     $('#guest').html(geusts);
 }
@@ -157,4 +157,13 @@ function getValue(persons){
     $('#ingredient').html(result);
 
 }
+
+
+
+////////// SlideShow ////
+$(document).ready(function(){
+    $('#demo').carousel({
+        interval:false
+    })
+})
 

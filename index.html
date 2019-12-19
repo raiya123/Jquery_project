@@ -2,77 +2,110 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Jquery Project</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Jquery Project</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/project.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<style>
-    #line{
-        border-left: 1px solid red;
-        height: 400px;
-        position: relative;
-        left: 5%;
-        margin-left: -3px;
-        top: 70;
-    }
-</style>
+
 <body>
-    <div class="container mt-5">
-        <div class="row text-center">
-            <div class="col-3"></div>
-            <div class="col-6">
-                <select id="recipe"class="form-control">
-                    <option value="" disabled selected>Choose Recipe</option>
-                </select>
-            </div>
-            <div class="col-3"></div>
+  <!-- /////// -->
+  <div class="jumbotron " >
+    <h1 class="text-center text-success">Welocme To Our Shop</h1>
+    <div class="container">
+      <div id="demo" class="carousel slide" data-ride="carousel" data-interval="1500">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+        </ul>
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/tekkalok.jpeg" id="imgs">
+          </div>
+          <div class="carousel-item">
+            <img src="img/french.jpg" id="imgs">
+          </div>
+          <div class="carousel-item">
+            <img src="img/saom.jpg" id="imgs">
+          </div>
+          <div class="carousel-item">
+            <img src="img/fish.jpg" id="imgs">
+          </div>
         </div>
-        <div class="contaimer mt-5">
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- //////// -->
+  <h3 class="text-center text-success">Please Choose your favorite Food and Drink</h3>
+  <div class="container mt-5">
+    <div class="row text-center">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <select id="recipe" class="form-control">
+          <option value="" disabled selected>Choose Recipe</option>
+        </select>
+      </div>
+      <div class="col-3"></div>
+    </div>
+        <div class="container mt-5"  id="hide">
             <div class="row">
                 <div class="col-3"></div>
                 <div class="col-3">
-                    <table class="table table-borderless text-right" id="name"></table>
+                  <table class="table table-borderless text-right" id="name"></table>
                 </div>
                 <div class="col-3">
-                    <table class="table table-borderless" id="img"></table>
+                  <table class="table table-borderless" id="img"></table>
                 </div>
                 <div class="col-3"></div>
+              </div><br>
+          <div class="row">
+            <div class="col-6">
+              <h5 id="text-num" class="text-right"></h5>
             </div>
-
-            <div class="row mt-3" id="hide">
-                <div class="col-6">
-                    <h5 id="text-num" class="text-right"></h5>
+            <div class="col-6">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <input id="minus" type="button" class="btn btn-danger" value="-">
                 </div>
-                <div class="col-6">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <input id="minus" type="button" value="-">
-                        </div>
-                       <div id="guest"></div>
-                        <div class="input-group-append">
-                            <input  id="add" type="button" value="+">
-                        </div>
-                    </div>
+                <div id="guest"></div>
+                <div class="input-group-append">
+                  <input id="add" type="button" class="btn btn-success" value="+">
                 </div>
+              </div>
             </div>
-
-            <div class="row mt-5">
-                <div class="col-5">
-                    <h4 id="nameIngredient" class="text-center"></h4><br>
-                    <table class="table table-borderless" id="ingredient"></table>
-                </div>
-                <div class="col-2" id="line"></div>
-                <div class="col-5">
-                    <h4 id="introduction" class="text-center"></h4><br>
-                    <div id="step" class="text-left"></div>
-                </div>
-            </div>
+          </div>
+        <div class="row mt-5">
+          <div class="col-5">
+            <h4 id="nameIngredient" class="text-center"></h4><br>
+            <table class="table table-borderless" id="ingredient"></table>
+          </div>
+          <div class="col-2" id="line"></div>
+          <div class="col-5">
+            <h4 id="introduction" class="text-center"></h4><br>
+            <div id="step" class="text-left"></div>
+          </div>
         </div>
+      </div>
     </div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/Jquery_Project.js"></script>
-</body>
+  </div>
 
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/Jquery_Project.js"></script>
+</body>
 </html>
