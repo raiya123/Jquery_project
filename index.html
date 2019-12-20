@@ -16,7 +16,7 @@
 <body>
   <!-- /////// -->
   <div class="jumbotron " >
-    <h1 class="text-center text-success">Welocme To Our Shop</h1>
+    <h1 class="text-center text-light">Welocme To Our Shop</h1>
     <div class="container">
       <div id="demo" class="carousel slide" data-ride="carousel" data-interval="1500">
         <!-- Indicators -->
@@ -64,44 +64,50 @@
       <div class="col-3"></div>
     </div>
         <div class="container mt-5"  id="hide">
+           <div class="card bg-info">
+             <div class="card-body">
+               <div class="card">
+                <div class="row">
+                  <div class="col-3"></div>
+                  <div class="col-3">
+                    <table class="table table-borderless text-right" id="name"></table>
+                  </div>
+                  <div class="col-3">
+                    <table class="table table-borderless" id="img"></table>
+                  </div>
+                  <div class="col-3"></div>
+                </div><br>
             <div class="row">
-                <div class="col-3"></div>
-                <div class="col-3">
-                  <table class="table table-borderless text-right" id="name"></table>
-                </div>
-                <div class="col-3">
-                  <table class="table table-borderless" id="img"></table>
-                </div>
-                <div class="col-3"></div>
-              </div><br>
-          <div class="row">
-            <div class="col-6">
-              <h5 id="text-num" class="text-right"></h5>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <input id="minus" type="button" class="btn btn-danger" value="-">
-                </div>
-                <div id="guest"></div>
-                <div class="input-group-append">
-                  <input id="add" type="button" class="btn btn-success" value="+">
+              <div class="col-6">
+                <h5 id="text-num" class="text-right"></h5>
+              </div>
+              <div class="col-6">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <input id="minus" type="button" class="btn btn-danger" value="-">
+                  </div>
+                  <div id="guest"></div>
+                  <div class="input-group-append">
+                    <input id="add" type="button" class="btn btn-success" value="+">
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        <div class="row mt-5">
-          <div class="col-5">
-            <h4 id="nameIngredient" class="text-center"></h4><br>
-            <table class="table table-borderless" id="ingredient"></table>
-          </div>
-          <div class="col-2" id="line"></div>
-          <div class="col-5">
-            <h4 id="introduction" class="text-center"></h4><br>
-            <div id="step" class="text-left"></div>
+          <div class="row mt-5">
+            <div class="col-5">
+              <h4 id="nameIngredient" class="text-center"></h4><br>
+              <table class="table table-borderless" id="ingredient"></table>
+            </div>
+            <div class="col-2" id="line"></div>
+            <div class="col-5">
+              <h4 id="introduction" class="text-center"></h4><br>
+              <div id="step" class="text-left"></div>
+            </div>
           </div>
         </div>
-      </div>
+               </div>
+             </div>
+           </div>
     </div>
   </div>
 

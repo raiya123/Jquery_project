@@ -113,7 +113,7 @@ function  getinstruction(instruction){
 function getNumberGest(guests){
     var geusts = "";
     geusts +=`
-        <input type="number" disabled class="text-center btn" id="member" value="${guests}">
+        <input type="number" disabled class="text-center btn btn-light" id="member" value="${guests}">
     `;
     $('#guest').html(geusts);
 }
