@@ -1,3 +1,4 @@
+ ////// Get API ///
 function getUrl() {
     var url ="https://raw.githubusercontent.com/radytrainer/test-api/master/test.json";
     return url;
@@ -13,7 +14,7 @@ $(document).ready(() =>{
     $('#hide').hide();
     $('#line').hide();
 
-    //////get increment and decrement
+    //////get increment and decrement 
     $('#add').on('click',function(){
         var increment = $('#member').val();
         getIncrement(increment);
@@ -77,7 +78,6 @@ var getEachRecipe = (name,img) =>{
     `;
     
     $('#img').html(results);
-    //// get Guest ///
 }
  //// get Ingredient ///
 function getIngredient(ingredient){
@@ -118,7 +118,7 @@ function getNumberGest(guests){
     $('#guest').html(geusts);
 }
 
-///// get increment
+///// get increment of guest
 function getIncrement(increments){
     var add = parseInt(increments) + 1;
     if(add <= 15){
@@ -128,7 +128,7 @@ function getIncrement(increments){
 
 
 }
-///// get increment
+///// get increment of guest
 function getDicrement(dicrement){
     var minus = parseInt(dicrement) - 1;
     if(minus > 0){
@@ -137,7 +137,7 @@ function getDicrement(dicrement){
     }
 }
 
-///// Get value of new member 
+///// Get value of new member in Guest
 function getValue(persons){
     var quanlitys;
     var newQuanlity;
@@ -155,15 +155,5 @@ function getValue(persons){
         `;
     })
     $('#ingredient').html(result);
-
 }
-
-
-
-////////// SlideShow ////
-$(document).ready(function(){
-    $('#demo').carousel({
-        interval:false
-    })
-})
 
