@@ -1,23 +1,29 @@
 #line{
     border-left: 1px solid red;
-    height: 400px;
+    height: auto;
     position: relative;
     left: 5%;
     margin-left: -3px;
     top: 70;
 }
-
 #imgs{
     width:20%;
     height:200px;
     border-radius: 50%;
     margin-left: 40%;
 }
-.jumbotron{
+/* .jumbotron{
     background-image: url("../img/background.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 330px;
     width: 100%;
+} */
+
+.jumbotron{
+    margin-top: -320px;
 }
 
+/* #carousel{
+    margin-top: -330px;
+} */

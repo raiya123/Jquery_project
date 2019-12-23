@@ -17,9 +17,10 @@
 
 <body>
   <!-- /////// -->
-  <div class="jumbotron " >
+  <img src="img/background.png" class="mx-auto d-block" style="width:100%;">
+  <div class="jumbotron bg-light ">
     <h1 class="text-center text-light">Welocme To Our Shop</h1>
-    <div class="container">
+    <div class="container" id="carousel">
       <div id="demo" class="carousel slide" data-ride="carousel" data-interval="1500">
         <!-- Indicators -->
         <ul class="carousel-indicators">
@@ -65,20 +66,20 @@
       </div>
       <div class="col-3"></div>
     </div>
-        <div class="container mt-5"  id="hide">
-           <div class="card bg-info">
-             <div class="card-body">
-               <div class="card">
-                <div class="row">
-                  <div class="col-3"></div>
-                  <div class="col-3">
-                    <table class="table table-borderless text-right" id="name"></table>
-                  </div>
-                  <div class="col-3">
-                    <table class="table table-borderless" id="img"></table>
-                  </div>
-                  <div class="col-3"></div>
-                </div><br>
+    <div class="container mt-5" id="hide">
+      <div class="card bg-info">
+        <div class="card-body">
+          <div class="card">
+            <div class="row">
+              <div class="col-3"></div>
+              <div class="col-3">
+                <table class="table table-borderless text-right" id="name"></table>
+              </div>
+              <div class="col-3">
+                <table class="table table-borderless" id="img"></table>
+              </div>
+              <div class="col-3"></div>
+            </div><br>
             <div class="row">
               <div class="col-6">
                 <h5 id="text-num" class="text-right"></h5>
@@ -95,46 +96,87 @@
                 </div>
               </div>
             </div>
-          <div class="row mt-5">  
-            <div class="col-5">
-              <h4 id="nameIngredient" class="text-center"></h4><br>
-              <table class="table table-borderless" id="ingredient"></table>
-            </div>
-            <div class="col-2" id="line"></div>
-            <div class="col-5">
-              <h4 id="introduction" class="text-center"></h4><br>
-              <div id="step" class="text-left"></div>
+            <div class="row mt-5">
+              <div class="col-5">
+                <h4 id="nameIngredient" class="text-center"></h4><br>
+                <!-- ////// display Ingredient -->
+                <table class="table table-borderless" id="ingredient"></table>
+              </div>
+              <div class="col-2" id="line"></div>
+              <div class="col-5">
+                <h4 id="introduction" class="text-center"></h4><br>
+                <!-- /////// display step of introduction /// -->
+                <div id="step" class="text-left"></div>
+              </div>
             </div>
           </div>
         </div>
-               </div>
-             </div>
-           </div>
-    </div>
-  </div><br><br>
-
-  <footer class=" bg-dark" style="margin-bottom: 0%">
-    <div class="container text-center">
-      <div class="row mt-4">
-          <div class="col-4 mt-3">
-              <p class="text-white mt-4">&copy; 2020 Welcome in our shop and enjoy it.</p>
-          </div>
-          <div class="col-4 text-white">
-              <h5>Our Location</h5>
-              <p >Phsa Tropeang Chok <br>
-               +855 88 30 87 661</p>
-          </div>
-            <div class="col-4">
-               <ul>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-               </ul>
-            </div>
       </div>
+    </div>
+  </div>
+  </div><br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <h5>Avocado Shake(Tekkalok)</h5>
+        <div class="card" style="background-color: teal;">
+          <div class="card-body">
+            <div class="card" style="background-color:teal;">
+                <img src="img/tekalok.jpg" width="100%" height="200" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <h5>French Chreps</h5>
+          <div class="card" style="background-color: teal;">
+              <div class="card-body">
+                <div class="card" style="background-color: teal;">
+                    <img src="img/frenchchrep.jpg" width="100%" height="300" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+        
+      </div>
+      <div class="col-3">
+          <div class="card" style="background-color: teal;">
+              <div class="card-body">
+                <div class="card" style="background-color: teal;">
+                    <img src="img/fryfish.png" width="100%" height="250" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+        
+      </div>
+      <div class="col-3">
+        <h5 class="text-center">Fry Egg and Saom</h5>
+          <div class="card" style="background-color: teal;">
+              <div class="card-body">
+                <div class="card" style="background-color: teal;">
+                    <img src="img/eggsaom.jpg" width="100%" height="250" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+       
+      </div>
+    </div>
+  </div>
+  <footer class=" bg-dark" style="margin-bottom: 0%">
+    <div class="container ">
+      <div class="row mt-5">
+        <div class="col-12 mt-3 text-center text-white">
+         <h5>Our Location</h5>
+        <p>Phsa Tropeang Chok <br>
+          +855 88 30 87 661</p>
+          <p class=" mt-4">&copy; 2020 Welcome in our shop and enjoy it</p>
+      </div>
+    </div>
+    </div>
+    </div>
     </div>
   </footer>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/Jquery_Project.js"></script>
 </body>
+
 </html>
