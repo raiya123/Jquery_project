@@ -1,8 +1,9 @@
- ////// Get API ///
+ ////// Get URL ///
 function getUrl() {
     var url ="https://raw.githubusercontent.com/radytrainer/test-api/master/test.json";
     return url;
 }
+
 $(document).ready(() =>{
     requestApi();
     $('#recipe').on('change',function(){
@@ -14,7 +15,7 @@ $(document).ready(() =>{
     $('#hide').hide();
     $('#line').hide();
 
-    //////get increment and decrement 
+    //////get values of guest
     $('#add').on('click',function(){
         var increment = $('#member').val();
         getIncrement(increment);
@@ -138,13 +139,13 @@ function getDicrement(dicrement){
 }
 
 ///// Get value of new member in Guest
-function getValue(persons){
+function getValue(newMember){
     var quanlitys;
     var newQuanlity;
     var result = "";
     quanlity.ingredients.forEach(item =>{
         quanlitys = item.quantity/oldGuest;
-        newQuanlity = quanlitys*persons;
+        newQuanlity = quanlitys*newMember;
         result +=`
             <tr>
             <td><img src="${item.iconUrl}" width="40" height="35"  /></td>
