@@ -9,6 +9,7 @@ $(document).ready(() =>{
     $('#recipe').on('change',function(){
         $('#hide').show();
         $('#line').show();
+        $('#image').hide();
         var recipes = $('#recipe').val();
         getRecipe(recipes);
     });
