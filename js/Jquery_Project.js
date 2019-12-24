@@ -138,7 +138,7 @@ function getDicrement(dicrement){
     }
 }
 
-///// Get value of new member in Guest
+///// Get quantity of new member in Guest
 function getValue(newMember){
     var quanlitys;
     var newQuanlity;
